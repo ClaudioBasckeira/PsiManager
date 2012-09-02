@@ -1,0 +1,22 @@
+<resources>
+
+    <string name="app_name">PsiManager</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">PsiManager</string>
+    <string name="title_activity_tabs_fragment">TabsFragment</string>
+    <string name="tab_home">Home</string>
+    <string name="tab_lists">Lists</string>
+    <string name="tab_powers">Powers</string>
+    <string name="title_activity_lists_fragment">ListsFragment</string>
+    <string name="title_activity_powers_fragment">PowersFragment</string>
+    
+    <string name="save">Save</string>
+    
+    <string name="add_power">Add new power</string>
+    <string name="power_name">Power name</string>
+    <string name="power_cost">Cost</string>
+    <string name="duration">Duration</string>
+    <string name="description">Description</string>
+
+</resources>
