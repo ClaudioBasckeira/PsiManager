@@ -23,4 +23,12 @@ public class MainActivity extends FragmentActivity implements OnAddPowerFormList
 		TabsFragment tabs = (TabsFragment)getSupportFragmentManager().findFragmentById(R.id.tabs_fragment);
 		tabs.setSubTab(TabsFragment.BASE_TAB);
 	}
+	
+    //This is to correctly "flush" sub-tabs when back key is pressed
+    public void onBackPressed() {
+    	TabsFragment tabs = (TabsFragment)getSupportFragmentManager().findFragmentById(R.id.tabs_fragment);
+    	tabs.setSubTab(TabsFragment.BASE_TAB);
+    	super.onBackPressed();
+    	return;
+    }
 }
