@@ -22,6 +22,7 @@ public class TabsFragment extends Fragment implements OnTabChangeListener{
     
     public static final String BASE_TAB = "base";
     public static final String POWERS_ADD_POWER = "AddNewPower";
+    public static final String POWERS_EDIT_POWER = "EditPower";
 
 	private View mRoot;
     private TabHost mTabHost;
@@ -118,6 +119,13 @@ public class TabsFragment extends Fragment implements OnTabChangeListener{
         			fragment = new AddPowerFormFragment();
         		}
 	            tag = POWERS_ADD_POWER;
+        	}
+        	else if(POWERS_EDIT_POWER.equals(mSubTab)){
+        		fragment = (EditPowerFormFragment)getFragmentManager().findFragmentByTag(POWERS_EDIT_POWER);
+        		if(fragment == null) {
+        			fragment = new EditPowerFormFragment();
+        		}
+	            tag = POWERS_EDIT_POWER;
         	}
         	else {
 	            fragment = new PowersFragment();
