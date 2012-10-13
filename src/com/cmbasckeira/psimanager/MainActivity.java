@@ -3,12 +3,23 @@ package com.cmbasckeira.psimanager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
+import com.cmbasckeira.psimanager.AddListFormFragment.OnSaveListListener;
 import com.cmbasckeira.psimanager.AddPowerFormFragment.OnSavePowerListener;
+import com.cmbasckeira.psimanager.EditListFormFragment.OnUpdateListListener;
 import com.cmbasckeira.psimanager.EditPowerFormFragment.OnUpdatePowerListener;
+import com.cmbasckeira.psimanager.ListsFragment.OnAddListFormListener;
+import com.cmbasckeira.psimanager.ListsFragment.OnEditListFormListener;
 import com.cmbasckeira.psimanager.PowersFragment.OnAddPowerFormListener;
 import com.cmbasckeira.psimanager.PowersFragment.OnEditPowerFormListener;
 
-public class MainActivity extends FragmentActivity implements OnAddPowerFormListener, OnEditPowerFormListener, OnSavePowerListener, OnUpdatePowerListener{
+public class MainActivity extends FragmentActivity implements OnAddPowerFormListener, 
+															  OnEditPowerFormListener, 
+															  OnSavePowerListener, 
+															  OnUpdatePowerListener,
+															  OnAddListFormListener, 
+															  OnEditListFormListener,
+															  OnSaveListListener, 
+															  OnUpdateListListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -32,6 +43,26 @@ public class MainActivity extends FragmentActivity implements OnAddPowerFormList
 	}
 	
 	public void onUpdatePower() {
+		TabsFragment tabs = (TabsFragment)getSupportFragmentManager().findFragmentById(R.id.tabs_fragment);
+		tabs.setSubTab(TabsFragment.BASE_TAB);
+	}
+	
+	public void onAddListForm() {
+		TabsFragment tabs = (TabsFragment)getSupportFragmentManager().findFragmentById(R.id.tabs_fragment);
+		tabs.setSubTab(TabsFragment.LISTS_ADD_LIST);
+	}
+	
+	public void onEditListForm() {
+		TabsFragment tabs = (TabsFragment)getSupportFragmentManager().findFragmentById(R.id.tabs_fragment);
+		tabs.setSubTab(TabsFragment.LISTS_EDIT_LIST);
+	}
+	
+	public void onSaveList() {
+		TabsFragment tabs = (TabsFragment)getSupportFragmentManager().findFragmentById(R.id.tabs_fragment);
+		tabs.setSubTab(TabsFragment.BASE_TAB);
+	}
+	
+	public void onUpdateList() {
 		TabsFragment tabs = (TabsFragment)getSupportFragmentManager().findFragmentById(R.id.tabs_fragment);
 		tabs.setSubTab(TabsFragment.BASE_TAB);
 	}

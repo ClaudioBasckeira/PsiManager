@@ -18,5 +18,9 @@
     <string name="power_cost">Cost</string>
     <string name="duration">Duration</string>
     <string name="description">Description</string>
+    
+    <string name="add_list">Add new list</string>
+    <string name="list_name">List name</string>
+    <string name="power_points">Power Points</string>
 
 </resources>

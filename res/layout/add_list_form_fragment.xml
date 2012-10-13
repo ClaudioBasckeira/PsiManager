@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+    android:orientation="vertical">
+    
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1">
+		
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+		    android:orientation="vertical"
+		    android:background="@color/base_background" 
+		    android:paddingTop="10dp"
+		    >
+		    
+		    <EditText xmlns:android="http://schemas.android.com/apk/res/android"
+		        android:id="@+id/list_name_field"
+		        android:hint="@string/list_name"
+		        android:inputType="text"
+		        android:layout_width="match_parent"
+		   		android:layout_height="wrap_content"
+		        android:maxLength="100"/>
+		    
+		    <EditText xmlns:android="http://schemas.android.com/apk/res/android"
+		        android:id="@+id/list_description_field"
+		        android:hint="@string/description"
+		        android:inputType="textMultiLine"
+		        android:minHeight="80dp"
+		        android:layout_width="match_parent"
+		   		android:layout_height="wrap_content"
+		        android:maxLength="10000"/>
+		    
+		    <EditText xmlns:android="http://schemas.android.com/apk/res/android"
+		        android:id="@+id/power_points_field"
+		        android:hint="@string/power_points"
+		        android:inputType="number"
+		        android:layout_width="wrap_content"
+		   		android:layout_height="wrap_content"
+		        android:maxLength="5"/>
+		
+		</LinearLayout>
+		
+	</ScrollView>
+	
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="40dp"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal"
+        android:background="@drawable/bottom_bar">
+	    
+        <Button xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/save_list"
+            android:text="@string/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:enabled="false"
+            
+            />
+	    
+	</RelativeLayout>
+	
+</LinearLayout>

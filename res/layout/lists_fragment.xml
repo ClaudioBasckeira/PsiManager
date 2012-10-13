@@ -1,15 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent" 
     android:background="@color/base_background">
+    
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     	android:id="@+id/lists_header"
+       	android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:padding="10dp">
+		
+		<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="2"
+		    android:textStyle="bold"
+		    android:text="@string/list_name"/>
+		
+		<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1"
+		    android:textStyle="bold"
+		    android:text="@string/power_points"/>
+		
+	</LinearLayout>
+	
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/bottom_bar"
+        android:layout_height="40dp"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal"
+        android:background="@drawable/bottom_bar"
+        android:layout_alignParentBottom="true">
+		
+        <ImageButton
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/add_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:contentDescription="@string/add_list"
+            android:scaleType="centerInside"
+            android:src="@drawable/plus_icon" />   
+	</RelativeLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/hello_world"
-        tools:context=".ListsFragment" />
+	<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:id="@android:id/list"
+	    android:layout_width="fill_parent"
+		android:layout_height="0dp"
+		android:layout_above="@id/bottom_bar"
+		android:layout_below="@id/lists_header">    
+	</ListView>
 
 </RelativeLayout>

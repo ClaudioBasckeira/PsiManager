@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class PsiManagerOpenHelper extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
     
     private static final String DATABASE_NAME = "PsiManager";
     
@@ -23,14 +23,14 @@ public class PsiManagerOpenHelper extends SQLiteOpenHelper {
             		"cost INTEGER);";
     
     private static final String LISTS_TABLE_CREATE =
-            "CREATE TABLE IF NOT EXISTS " + POWERS_TABLE_NAME + " (" +
+            "CREATE TABLE IF NOT EXISTS " + LISTS_TABLE_NAME + " (" +
             		"ID INTEGER PRIMARY KEY AUTOINCREMENT," +
             		"name TEXT," +
             		"description TEXT," +
             		"points INTEGER);";
     
     private static final String LISTS_REL_POWERS_TABLE_CREATE =
-            "CREATE TABLE IF NOT EXISTS " + POWERS_TABLE_NAME + " (" +
+            "CREATE TABLE IF NOT EXISTS " + LISTS_REL_POWERS_TABLE_NAME + " (" +
             		"ID INTEGER PRIMARY KEY AUTOINCREMENT," +
             		"ID_LIST INTEGER," +
             		"ID_POWER INTEGER);";

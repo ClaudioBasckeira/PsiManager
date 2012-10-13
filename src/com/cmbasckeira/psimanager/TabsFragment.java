@@ -23,6 +23,8 @@ public class TabsFragment extends Fragment implements OnTabChangeListener{
     public static final String BASE_TAB = "base";
     public static final String POWERS_ADD_POWER = "AddNewPower";
     public static final String POWERS_EDIT_POWER = "EditPower";
+    public static final String LISTS_ADD_LIST = "AddNewList";
+    public static final String LISTS_EDIT_LIST = "EditList";
 
 	private View mRoot;
     private TabHost mTabHost;
@@ -87,7 +89,6 @@ public class TabsFragment extends Fragment implements OnTabChangeListener{
         if (TAB_LISTS.equals(tabId)) {
             updateTab(tabId, R.id.tab_lists);
             mCurrentTab = 1;
-            mSubTab = BASE_TAB;
             return;
         }
         if (TAB_POWERS.equals(tabId)) {
@@ -108,7 +109,25 @@ public class TabsFragment extends Fragment implements OnTabChangeListener{
 
         //Decides which fragment will be loaded depending on selected tab
         if (TAB_LISTS.equals(tabId)) {
-            fragment = new ListsFragment();
+        	//This happens if the screen was rotated while on the Add List Form
+        	//In this case we want to conserve the form and all of it's current data
+        	if(LISTS_ADD_LIST.equals(mSubTab)){
+        		fragment = (AddListFormFragment)getFragmentManager().findFragmentByTag(LISTS_ADD_LIST);
+        		if(fragment == null) {
+        			fragment = new AddListFormFragment();
+        		}
+	            tag = LISTS_ADD_LIST;
+        	}
+        	else if(LISTS_EDIT_LIST.equals(mSubTab)){
+        		fragment = (EditListFormFragment)getFragmentManager().findFragmentByTag(LISTS_EDIT_LIST);
+        		if(fragment == null) {
+        			fragment = new EditListFormFragment();
+        		}
+	            tag = LISTS_EDIT_LIST;
+        	}
+        	else {
+	            fragment = new ListsFragment();
+        	}
         }
         else if (TAB_POWERS.equals(tabId)) {
         	//This happens if the screen was rotated while on the Add Power Form
