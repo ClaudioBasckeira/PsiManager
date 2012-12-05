@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
     android:orientation="vertical">
-    
+
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
 		android:layout_height="0dp"
@@ -41,6 +41,88 @@
 		        android:layout_width="wrap_content"
 		   		android:layout_height="wrap_content"
 		        android:maxLength="5"/>
+		    
+			<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:textStyle="bold"
+			    android:text="@string/list_selected_powers"/>
+			
+			<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		     	android:id="@+id/powers_header"
+		       	android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:padding="10dp">
+				
+				<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+				    android:layout_width="0dp"
+				    android:layout_height="wrap_content"
+				    android:layout_weight="2"
+				    android:textStyle="bold"
+				    android:text="@string/power_name"/>
+				
+				<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+				    android:layout_width="0dp"
+				    android:layout_height="wrap_content"
+				    android:layout_weight="1"
+				    android:textStyle="bold"
+				    android:text="@string/duration"/>
+				
+				<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+				    android:layout_width="0dp"
+				    android:layout_height="wrap_content"
+				    android:layout_weight="1"
+				    android:textStyle="bold"
+				    android:text="@string/power_cost"/>
+				
+			</LinearLayout>
+		
+			<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+			    android:id="@+id/selected_powers_list"
+			    android:layout_width="fill_parent"
+				android:layout_height="80dp">    
+			</ListView>
+			
+			<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:textStyle="bold"
+			    android:text="@string/list_unselected_powers"/>
+			
+			<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		     	android:id="@+id/powers_header"
+		       	android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:padding="10dp">
+				
+				<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+				    android:layout_width="0dp"
+				    android:layout_height="wrap_content"
+				    android:layout_weight="2"
+				    android:textStyle="bold"
+				    android:text="@string/power_name"/>
+				
+				<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+				    android:layout_width="0dp"
+				    android:layout_height="wrap_content"
+				    android:layout_weight="1"
+				    android:textStyle="bold"
+				    android:text="@string/duration"/>
+				
+				<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+				    android:layout_width="0dp"
+				    android:layout_height="wrap_content"
+				    android:layout_weight="1"
+				    android:textStyle="bold"
+				    android:text="@string/power_cost"/>
+				
+			</LinearLayout>
+			
+			<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+			    android:id="@+id/unselected_powers_list"
+			    android:layout_width="fill_parent"
+				android:layout_height="80dp">    
+			</ListView>
 		
 		</LinearLayout>
 		

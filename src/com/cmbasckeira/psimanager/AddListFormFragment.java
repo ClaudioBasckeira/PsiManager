@@ -2,16 +2,20 @@ package com.cmbasckeira.psimanager;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.widget.CursorAdapter;
+import android.support.v4.widget.SimpleCursorAdapter;
 import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 
 public class AddListFormFragment extends Fragment implements android.text.TextWatcher {
 	
@@ -19,6 +23,10 @@ public class AddListFormFragment extends Fragment implements android.text.TextWa
 	private EditText ETdescription;
 	private EditText ETpoints;
 	Button saveListButton;
+	Cursor data;
+	private static final String fields[] = {"name","duration","cost"};
+	private ListView selectedPowers = null;
+	private ListView unselectedPowers = null;
 	
 	OnSaveListListener mListener;
 	
@@ -33,6 +41,15 @@ public class AddListFormFragment extends Fragment implements android.text.TextWa
         Bundle savedInstanceState) {
         // Inflate the layout for this fragment
     	View view = inflater.inflate(R.layout.add_list_form_fragment, container, false);
+    	
+    	PsiManagerOpenHelper helper = new PsiManagerOpenHelper(getActivity());
+        SQLiteDatabase db = helper.getReadableDatabase();
+        data = db.rawQuery("Select ID _id, name, duration, cost FROM powers",null );
+        unselectedPowers = (ListView) view.findViewById (R.id.unselected_powers_list);
+        
+        @SuppressWarnings("deprecation")
+        CursorAdapter dataSource = new SimpleCursorAdapter(getActivity(), R.layout.powers_list, data, fields, new int[] {R.id.power_name_col,R.id.power_duration_col,R.id.power_cost_col});
+        unselectedPowers.setAdapter(dataSource);
         
     	// getting fields
     	ETname = (EditText) view.findViewById(R.id.list_name_field);

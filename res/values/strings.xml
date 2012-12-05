@@ -22,5 +22,7 @@
     <string name="add_list">Add new list</string>
     <string name="list_name">List name</string>
     <string name="power_points">Power Points</string>
+    <string name="list_selected_powers">Selected powers</string>
+    <string name="list_unselected_powers">Other powers</string>
 
 </resources>
